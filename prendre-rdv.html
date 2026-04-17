@@ -241,19 +241,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   (function() {
     var fired = false;
+    function redirect() {
+      if (fired) return;
+      fired = true;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'hubspot_meeting_booked',
+        eventCallback: function() { window.location.href = './merci-rdv.html'; },
+        eventTimeout: 1500
+      });
+      setTimeout(function() { window.location.href = './merci-rdv.html'; }, 1500);
+    }
+
     window.addEventListener('message', function(event) {
-      if (!event.origin || event.origin.indexOf('hubspot.com') === -1) return;
-      var payload = event.data && event.data.meetingsPayload;
-      if (payload && payload.meetingBookSucceeded && !fired) {
-        fired = true;
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'hubspot_meeting_booked',
-          eventCallback: function() { window.location.href = './merci-rdv.html'; },
-          eventTimeout: 1500
-        });
-        setTimeout(function() { window.location.href = './merci-rdv.html'; }, 1500);
-      }
+      if (!event.origin || event.origin.indexOf('hubspot') === -1) return;
+
+      // Debug: log all HubSpot messages to the console
+      console.log('[HubSpot message]', event.origin, event.data);
+
+      var data = event.data;
+      if (!data) return;
+
+      // Multiple possible event shapes from HubSpot meetings widget
+      var booked =
+        (data.meetingsPayload && data.meetingsPayload.meetingBookSucceeded) ||
+        data.meetingBookSucceeded === true ||
+        data === 'meetingBookSucceeded' ||
+        (typeof data === 'string' && data.indexOf('meetingBookSucceeded') !== -1) ||
+        (data.type && String(data.type).toLowerCase().indexOf('meetingbook') !== -1) ||
+        (data.eventName && String(data.eventName).toLowerCase().indexOf('meetingbook') !== -1);
+
+      if (booked) redirect();
     });
   })();
 </script>
