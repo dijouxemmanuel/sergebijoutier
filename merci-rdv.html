@@ -10,6 +10,12 @@
   })(window,document,'script','dataLayer','GTM-MH55248X');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Conversion event: HubSpot meeting booked -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'hubspot_meeting_booked' });
+  </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -22,35 +28,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Title -->
-  <title>Prendre rendez-vous | Serge Bijoutier</title>
+  <title>Merci pour votre rendez-vous | Serge Bijoutier</title>
 </head>
 
 <style>
-  @media (max-width: 991.98px) {
-    .hero-text-responsive {
-      color: white !important;
-    }
-
-    .hero-text-responsive h1,
-    .hero-text-responsive h2,
-    .hero-text-responsive p,
-    .hero-text-responsive a,
-    .hero-text-responsive strong,
-    .hero-text-responsive .lead {
-      color: white !important;
-    }
-
-    .hero-text-responsive a.btn {
-      background-color: white !important;
-      color: black !important;
-      border-color: white !important;
-    }
-
-    .hero-text-responsive .text-primary {
-      color: white !important;
-    }
-  }
-
   html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -73,8 +54,9 @@
     font-family: 'Playfair Display', serif;
   }
 
-  .meetings-iframe-container {
-    min-height: 700px;
+  .thankyou-icon {
+    font-size: 5rem;
+    color: #c9a24c;
   }
 </style>
 
@@ -163,23 +145,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </nav>
 
-<!-- Hero section -->
+<!-- Hero / Thank you section -->
 <section class="py-15 py-xl-20 bg-dark text-white text-center">
   <div class="container">
-    <h1 class="display-3 fw-bold mb-3">Prendre rendez-vous</h1>
-    <p class="lead mb-0">Planifiez votre expertise gratuite en boutique au 97 Boulevard Magenta, 75010 Paris</p>
+    <div class="mb-4">
+      <i class="bi bi-check-circle-fill thankyou-icon"></i>
+    </div>
+    <h1 class="display-3 fw-bold mb-3">Merci pour votre rendez-vous</h1>
+    <p class="lead mb-5">
+      Votre demande a bien été enregistrée. Un email de confirmation vient de vous être envoyé.<br />
+      Nous avons hâte de vous accueillir en boutique au 97 Boulevard Magenta, 75010 Paris.
+    </p>
+    <a href="./index.html" class="btn btn-outline-white rounded-pill px-5 py-2">
+      Retour à l'accueil
+    </a>
   </div>
 </section>
 
-<!-- HubSpot Meetings Embed -->
+<!-- Info complémentaires -->
 <section class="py-10 py-xl-15">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <!-- Start of Meetings Embed Script -->
-        <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/warren-chikli/rendez-vous-boutique?embed=true"></div>
-        <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
-        <!-- End of Meetings Embed Script -->
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h2 class="mb-4">En attendant votre rendez-vous</h2>
+        <p class="mb-4">
+          Préparez vos bijoux, diamants, montres ou objets en or que vous souhaitez faire expertiser.
+          Notre expert vous recevra en toute discrétion pour une estimation gratuite et sans engagement.
+        </p>
+        <p class="mb-0">
+          Une question ? Contactez-nous au
+          <a href="tel:+33147701089" class="text-reset fw-bold">01 47 70 10 89</a>
+        </p>
       </div>
     </div>
   </div>
@@ -236,22 +232,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </footer>
-
-<!-- HubSpot meeting booked listener (fallback tracking if redirect fails) -->
-<script>
-  (function() {
-    var fired = false;
-    window.addEventListener('message', function(event) {
-      if (!event.origin || event.origin.indexOf('hubspot.com') === -1) return;
-      var payload = event.data && event.data.meetingsPayload;
-      if (payload && payload.meetingBookSucceeded && !fired) {
-        fired = true;
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'hubspot_meeting_booked' });
-      }
-    });
-  })();
-</script>
 
 <!-- javascript -->
 <script src="./assets/js/vendor.bundle.js"></script>
