@@ -1,0 +1,99 @@
+{
+  "redirects": [
+    {
+      "source": "/achatBijouxSignés.html",
+      "destination": "/achat-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/achatBijouxSign%C3%A9s.html",
+      "destination": "/achat-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/achatBijouxSign%c3%a9s.html",
+      "destination": "/achat-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/achatBijouxSigne%CC%81s.html",
+      "destination": "/achat-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/achatBijouxSignes.html",
+      "destination": "/achat-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/expertiseBijouxSignés.html",
+      "destination": "/expertise-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/expertiseBijouxSign%C3%A9s.html",
+      "destination": "/expertise-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/expertiseBijouxSign%c3%a9s.html",
+      "destination": "/expertise-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/expertiseBijouxSigne%CC%81s.html",
+      "destination": "/expertise-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/expertiseBijouxSignes.html",
+      "destination": "/expertise-bijoux-signes.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog1.html",
+      "destination": "/comment-faire-expertiser-ses-bijoux-a-paris.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog2.html",
+      "destination": "/estimation-pierres-precieuses-diamants.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog3.html",
+      "destination": "/vendre-ses-bijoux-anciens-a-paris.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/index2.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index-test2.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index-test-3.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index280725.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about2.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ]
+}
