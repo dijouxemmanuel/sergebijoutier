@@ -1,0 +1,23 @@
+# Serge Bijoutier — Expertise Bijoux Paris
+# Tous les moteurs de recherche et robots d'IA sont autorisés.
+
+User-agent: *
+Allow: /
+
+# Robots d'IA explicitement autorisés
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: CCBot
+User-agent: MistralAI-User
+Allow: /
+
+Sitemap: https://www.expertise-bijoux-paris.com/sitemap.xml
