@@ -2,6 +2,36 @@
 <html lang="fr">
 
 <head>
+  <!-- Consent Mode V2 avancé : consentement par défaut, avant Acceptrics et Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500,
+      region: ['AT','BE','BG','CH','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IS','IT','LI','LT','LU','LV','MT','NL','NO','PL','PT','RO','SE','SI','SK']
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
+    // Visiteur qui a déjà fait son choix : on le réapplique tout de suite (stocké par Acceptrics)
+    try {
+      var s = JSON.parse(localStorage.getItem('__acceptrics_settings') || 'null');
+      if (s && s.consent) {
+        var u = {}, k = ['ad_storage','analytics_storage','ad_user_data','ad_personalization','functionality_storage'];
+        for (var i = 0; i < k.length; i++) {
+          var v = s.consent[k[i]];
+          if (v === 'accepted') u[k[i]] = 'granted'; else if (v === 'rejected') u[k[i]] = 'denied';
+        }
+        if (Object.keys(u).length) gtag('consent', 'update', u);
+      }
+    } catch (e) {}
+  </script>
     <script async rel="dns-prefetch" type="text/javascript" src="https://acct.acceptrics.com/1652f0d0aab5"></script>
     <style>#acceptricsCookieBanner, #acceptricsCookieBanner a { color: #ffffff !important; }</style>
   

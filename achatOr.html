@@ -2,6 +2,36 @@
 <html lang="fr">
 
 <head>
+  <!-- Consent Mode V2 avancé : consentement par défaut, avant Acceptrics et Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500,
+      region: ['AT','BE','BG','CH','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IS','IT','LI','LT','LU','LV','MT','NL','NO','PL','PT','RO','SE','SI','SK']
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
+    // Visiteur qui a déjà fait son choix : on le réapplique tout de suite (stocké par Acceptrics)
+    try {
+      var s = JSON.parse(localStorage.getItem('__acceptrics_settings') || 'null');
+      if (s && s.consent) {
+        var u = {}, k = ['ad_storage','analytics_storage','ad_user_data','ad_personalization','functionality_storage'];
+        for (var i = 0; i < k.length; i++) {
+          var v = s.consent[k[i]];
+          if (v === 'accepted') u[k[i]] = 'granted'; else if (v === 'rejected') u[k[i]] = 'denied';
+        }
+        if (Object.keys(u).length) gtag('consent', 'update', u);
+      }
+    } catch (e) {}
+  </script>
     <script async rel="dns-prefetch" type="text/javascript" src="https://acct.acceptrics.com/1652f0d0aab5"></script>
     <style>#acceptricsCookieBanner, #acceptricsCookieBanner a { color: #ffffff !important; }</style>
 
@@ -472,6 +502,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   ]
 }
       </script>
+    </section>
+    <!-- reviews -->
+    <section class="pb-10 pb-xl-15">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-8">
+            <div class="text-center mb-5">
+              <span class="eyebrow mb-2 text-secondary">Ils nous font confiance.</span>
+              <h2 class="fw-bold">Ce que disent nos clients</h2>
+              <a href="https://g.co/kgs/PEF1AyF" target="_blank" rel="noopener noreferrer" class="d-inline-flex align-items-center gap-2 mt-3 text-reset text-decoration-none" aria-label="Note Google : 4,8 sur 5, 266 avis vérifiés">
+                <span class="fs-2 fw-bold lh-1">4,8</span>
+                <span class="text-yellow fs-5" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+                <span class="text-secondary">266 avis vérifiés sur Google</span>
+              </a>
+            </div>
+            <ul class="list-unstyled border-bottom">
+                <li class="border-top py-5">
+                  <div class="d-flex flex-wrap justify-content-between">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                      <div class="d-flex align-items-end mb-1">
+                        <span class="fs-3 fw-bold lh-1 mb-0 me-1">5.0</span>
+                      </div>
+                      <ul class="rating text-yellow">
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="mb-2 lead text-secondary">“Accueil chaleureux, je suis venue pour un rachat d'or, le prix est le plus compétitif dans le quartier, je suis amplement satisfaite. Merci à l'équipe de la bijouterie pour son professionnalisme.”</p>
+                      <span class="eyebrow">Fatia Ghorfati</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="border-top py-5">
+                  <div class="d-flex flex-wrap justify-content-between">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                      <div class="d-flex align-items-end mb-1">
+                        <span class="fs-3 fw-bold lh-1 mb-0 me-1">5.0</span>
+                      </div>
+                      <ul class="rating text-yellow">
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="mb-2 lead text-secondary">“Les meilleurs, très sympa et très rapide sur le rachat d'or.”</p>
+                      <span class="eyebrow">Robin</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="border-top py-5">
+                  <div class="d-flex flex-wrap justify-content-between">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                      <div class="d-flex align-items-end mb-1">
+                        <span class="fs-3 fw-bold lh-1 mb-0 me-1">5.0</span>
+                      </div>
+                      <ul class="rating text-yellow">
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="mb-2 lead text-secondary">“Une bijouterie remarquable pour le rachat de l'or. L'accueil est chaleureux, le personnel est à l'écoute et d'un grand professionnalisme.”</p>
+                      <span class="eyebrow">Aminata Sow</span>
+                    </div>
+                  </div>
+                </li>
+            </ul>
+            <div class="text-center mt-5">
+              <a href="https://g.co/kgs/PEF1AyF" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-pill">
+                Voir tous nos avis sur Google
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </article>
 
